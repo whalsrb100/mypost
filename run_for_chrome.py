@@ -15,6 +15,8 @@ descriptionFileName = '{}description.txt'.format(baseDir)
 linkFileName = '{}link.txt'.format(baseDir)
 bodyFileName = '{}body.txt'.format(baseDir)
 
+isTest = True
+saveOnly = True
 
 # Chrome 브라우저용 옵션 설정 (필요에 따라 조정)
 chrome_options = webdriver.ChromeOptions()
@@ -36,11 +38,7 @@ driver.get(url)
 ########## 작업 수행 ##########
 time.sleep(4)
 
-
-istest = True
-
 if isTest:
-    saveOnly = True
     count='01'
     myTitle="test 제목입니다 2025-02-12 " + count
     myTags="태그1,태그2"
