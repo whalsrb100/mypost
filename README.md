@@ -1,0 +1,2 @@
+# mypost
+auto post
