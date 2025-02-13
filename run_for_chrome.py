@@ -8,12 +8,12 @@ import pygetwindow as gw
 import time
 
 UserName='root'
-
-titleFileName = 'title.txt'
-desFileName = 'tags.txt'
-descriptionFileName = 'description.txt'
-linkFileName = 'link.txt'
-bodyFileName = 'body.txt'
+baseDir = './'
+titleFileName = '{}title.txt'.format(baseDir)
+desFileName = '{}tags.txt'.format(baseDir)
+descriptionFileName = '{}description.txt'.format(baseDir)
+linkFileName = '{}link.txt'.format(baseDir)
+bodyFileName = '{}body.txt'.format(baseDir)
 
 
 # Chrome 브라우저용 옵션 설정 (필요에 따라 조정)
