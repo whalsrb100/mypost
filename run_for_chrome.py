@@ -8,12 +8,21 @@ import pygetwindow as gw
 import time
 
 UserName='root'
+
+titleFileName = 'title.txt'
+desFileName = 'tags.txt'
+descriptionFileName = 'description.txt'
+linkFileName = 'link.txt'
+bodyFileName = 'body.txt'
+
+
 # Chrome 브라우저용 옵션 설정 (필요에 따라 조정)
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
 chrome_options.add_argument('--disable-blink-features=AutomationControlled')
 chrome_options.add_argument("--user-data-dir=C:\\Users\\{}\\AppData\\Local\\Google\\Chrome\\User Data".format(UserName))
+
 
 # 웹 드라이버 설정
 service = ChromeService(ChromeDriverManager().install())
@@ -25,18 +34,47 @@ url = "https://draft.blogger.com/blog/posts/556890584458197932"
 driver.get(url)
 
 ########## 작업 수행 ##########
-
 time.sleep(4)
 
-saveOnly = True
-count='01'
-myTitle="test 제목입니다 2025-02-12 " + count
-myTags="태그1,태그2"
-myDescription="TEST 설명글 입니다 2025-02-12 " + count
-myLink="test-link-2025-02-12 " + count
-myBody="""<p><strong>테스트 본문</strong>입니다.<br />
+
+istest = True
+
+if isTest:
+    saveOnly = True
+    count='01'
+    myTitle="test 제목입니다 2025-02-12 " + count
+    myTags="태그1,태그2"
+    myDescription="TEST 설명글 입니다 2025-02-12 " + count
+    myLink="test-link-2025-02-12 " + count
+    myBody="""<p><strong>테스트 본문</strong>입니다.<br />
 2025-02-12 {} 째 테스트.
 </p>""".format(count)
+else:
+    tmpList = []
+    with open(titleFileName, 'r') as file_data:
+        for line in file_data:  tmpList.append(line)
+    myTitle = ' '.join(tmpList).strip()
+    tmpList.clear()
+
+    with open(tagsFileName, 'r') as file_data:
+        for line in file_data:  tmpList.append(line)
+    myTags = ' '.join(tmpList).strip()
+    tmpList.clear()
+
+    with open(descriptionFileName, 'r') as file_data:
+        for line in file_data:  tmpList.append(line)
+    myDescription = ' '.join(tmpList).strip()
+    tmpList.clear()
+
+    with open(linkFileName, 'r') as file_data:
+        for line in file_data:  tmpList.append(line)
+    myLink = ' '.join(tmpList).strip()
+    tmpList.clear()
+
+    with open(bodyFileName, 'r') as file_data:
+        for line in file_data:  tmpList.append(line)
+    myBody = ' '.join(tmpList).strip()
+    tmpList.clear()
 
 # 키보드 이벤트로 텍스트 입력
 actions = webdriver.ActionChains(driver)
