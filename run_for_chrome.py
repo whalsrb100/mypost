@@ -364,43 +364,68 @@ elif appName == appList[3]:
     input_string(myBody)
 
 # 저장만 할 지, 게시할지 의 분기
-if saveOnly:
+if appName == appList[0] or appName == appList[1] or appName == appList[2]:
+    if saveOnly:
         # 저장하기 메뉴 열기 화살표
-    myXpath = '/html/body/div[8]/c-wiz[2]/div/c-wiz/div/div[1]/div[2]/div[3]/span/span/span'
-    element = driver.find_element(By.XPATH,myXpath)
-    xpos=element.location['x']+int(element.size['width']/2)
-    ypos=element.location['y']+int(element.size['height']/2)
-    input_click(xpos,ypos)
-    time.sleep(0.2)
-    # 저장
-    myXpath = '/html/body/div[8]/c-wiz[2]/div[2]/div/div/span[2]/div[3]/div'
-    element = driver.find_element(By.XPATH,myXpath)
-    xpos=element.location['x']+int(element.size['width']/2)
-    ypos=element.location['y']+int(element.size['height']/2)
-    input_click(xpos,ypos)
-    time.sleep(0.2)
-    # 뒤로가기 버튼
-    myXpath = '/html/body/div[8]/div[2]/header/div[2]/div[1]/div[2]'
-    element = driver.find_element(By.XPATH,myXpath)
-    xpos=element.location['x']+int(element.size['width']/2)
-    ypos=element.location['y']+int(element.size['height']/2)
-    input_click(xpos,ypos)
-    time.sleep(0.2)
-else:
-    # 게시 버튼
-    myXpath = '/html/body/div[8]/c-wiz[2]/div/c-wiz/div/div[1]/div[2]/div[4]/span'
-    element = driver.find_element(By.XPATH,myXpath)
-    xpos=element.location['x']+int(element.size['width']/2)
-    ypos=element.location['y']+int(element.size['height']/2)
-    input_click(xpos,ypos)
-    time.sleep(0.2)
-    # 확인 버튼
-    myXpath = '/html/body/div[8]/div[4]/div/div[2]/div[3]/div[2]/div[2]'
-    element = driver.find_element(By.XPATH,myXpath)
-    xpos=element.location['x']+int(element.size['width']/2)
-    ypos=element.location['y']+int(element.size['height']/2)
-    input_click(xpos,ypos)
-    time.sleep(0.2)
+        myXpath = '/html/body/div[8]/c-wiz[2]/div/c-wiz/div/div[1]/div[2]/div[3]/span/span/span'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+        # 저장
+        myXpath = '/html/body/div[8]/c-wiz[2]/div[2]/div/div/span[2]/div[3]/div'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+        # 뒤로가기 버튼
+        myXpath = '/html/body/div[8]/div[2]/header/div[2]/div[1]/div[2]'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+    else:
+        # 게시 버튼
+        myXpath = '/html/body/div[8]/c-wiz[2]/div/c-wiz/div/div[1]/div[2]/div[4]/span'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+        # 확인 버튼
+        myXpath = '/html/body/div[8]/div[4]/div/div[2]/div[3]/div[2]/div[2]'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+elif appName == appList[3]:
+    if saveOnly:
+        myXpath = '/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div/div[1]/div/div[1]/div/div[4]/button[1]'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+    else:
+        # 게시 버튼
+        myXpath = '/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div/div[1]/div/div[1]/div/div[4]/button[2]'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+        # 확인 버튼
+        myXpath = '/html/body/div[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div[1]/div[2]/button'
+        element = driver.find_element(By.XPATH,myXpath)
+        xpos=element.location['x']+int(element.size['width']/2)
+        ypos=element.location['y']+int(element.size['height']/2)
+        input_click(xpos,ypos)
+        time.sleep(0.2)
+
 
 with open("{}/registerd".format(postDir), 'w') as file_data:
     file_data.write('')
