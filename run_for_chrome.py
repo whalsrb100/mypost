@@ -13,6 +13,9 @@ UserName='root'
 #            0            1           2            3
 appList = ['itmoeyo','run-linux', 'issues', 'techforlinux']
 appName = appList[0]
+#appName = appList[1]
+#appName = appList[2]
+#appName = appList[3]
 
 baseDir = '/root/mj/posts/{}'.format(appName)
 post = sys.argv[1]
